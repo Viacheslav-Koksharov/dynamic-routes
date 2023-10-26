@@ -5,13 +5,13 @@ import {
   LinkStyled,
 } from "./Navigation.styled.js";
 
-const Navigation = ({tabs}) => {
+const Navigation = ({sortedData}) => {
   return (
     <NavigationStyled>
           <NavList style={{display:"flex"}}>
-          {tabs?.map(tab => (
-            <NavItem key={tab.id} style={{marginRight:"25px"}}>
-               <LinkStyled to={`/${tab.id}`}>{tab.title}</LinkStyled>
+          {sortedData?.map(({id,title}) => (
+            <NavItem key={id} style={{marginRight:"25px"}}>
+               <LinkStyled to={`/${id}`}>{title}</LinkStyled>
             </NavItem>
           ))}
         </NavList>
